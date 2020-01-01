@@ -2,21 +2,8 @@ import React from 'react';
 import './input_field.css';
 
 export default class TextInputField extends React.Component {
-  handleChange(e) {
-    const { name, value } = e.target;
-    console.log(name, ' => ', value);
-  }
-
-  handleFocus() {
-    console.log('focus');
-  }
-
-  handleBlur() {
-    console.log('blur');
-  }
-
   render() {
-    const { label, name } = this.props;
+    const { label, name, onChange } = this.props;
 
     return(
       <div className="input-field">
@@ -31,9 +18,7 @@ export default class TextInputField extends React.Component {
           name={name}
           type="text"
           className="input-field__text-input"
-          onChange={this.handleChange}
-          onFocus={this.handleFocus}
-          onBlur={this.handleBlur}
+          onChange={onChange}
         />
       </div>
     );

@@ -4,28 +4,42 @@ import CheckboxField from './form_elements/checkbox_field';
 import SelectField from './form_elements/select_field';
 
 export default class JobCreationForm extends React.Component {
+  handleChange(e) {
+    const { type, name, value, checked } = e.target;
+    if (type === 'checkbox') {
+      console.log(name, ' => ', checked);
+    } else {
+      console.log(name, ' => ', value);
+    }
+  }
+
   render() {
     return(
       <form>
         <TextInputField 
           label="Title"
           name="title"
+          onChange={this.handleChange}
         />
         <TextInputField 
           label="Company"
           name="company"
+          onChange={this.handleChange}
         />
         <TextInputField 
           label="Salary"
           name="salary"
+          onChange={this.handleChange}
         />
         <CheckboxField 
           label="Remote friendly?"
           name="isRemoteFriendly"
+          onChange={this.handleChange}
         />
         <SelectField 
           name="location"
           label="Location"
+          onChange={this.handleChange}
           options={[
             {
               'label': 'Select...',

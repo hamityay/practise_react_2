@@ -2,13 +2,8 @@ import React from 'react';
 import './input_field.css';
 
 export default class SelectField extends React.Component {
-  handleChange(e) {
-    const { name, value } = e.target;
-    console.log(name, ' => ', value);
-  }
-
   render() {
-    const { label, name, options, value } = this.props;
+    const { label, name, options, value, onChange } = this.props;
 
     return(
       <div className="input-field">
@@ -23,7 +18,7 @@ export default class SelectField extends React.Component {
           name={name}
           id={name}
           value={value}
-          onChange={this.handleChange}
+          onChange={onChange}
         >
           {options.map(option =>
             <option
