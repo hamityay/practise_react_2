@@ -19,11 +19,12 @@ export default class Counter extends React.Component {
   };
 
   render() {
+    const { counter } = this.state;
     return(
       <div className="counter-box">
         <button onClick={ this.increment }>+1</button>
-        <span className={this.state.counter < 0 ? 'counter-box--danger' : ''}>
-          { this.state.counter }
+        <span className={counter < 0 ? 'counter-box--danger' : ''}>
+          { counter }
         </span>
         <button onClick={ this.decrement }>-1</button>
       </div>
