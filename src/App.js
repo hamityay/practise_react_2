@@ -15,10 +15,7 @@ function App() {
       </header>
       {jobs.map(job =>
         <JobItem 
-          title={job.title}
-          company={job.company}
-          location={job.location}
-          salary={job.salary}
+          {...job}
           key={job.id}
         />
       )}
