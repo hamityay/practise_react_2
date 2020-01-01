@@ -1,7 +1,7 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Counter from "./components/counter";
+import JobItem from './components/job_list_element';
+import jobs from './data/jobs';
 
 const items = ['banana', 'apple', 'orange'];
 
@@ -9,22 +9,19 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        {items.map((item, index) =>
-          <Counter name={item} key={index} />
-        )}
+        <h1 className="App-title">
+          Creating a Reusable List Component
+        </h1>
       </header>
+      {jobs.map(job =>
+        <JobItem 
+          title={job.title}
+          company={job.company}
+          location={job.location}
+          salary={job.salary}
+          key={job.id}
+        />
+      )}
     </div>
   );
 }
