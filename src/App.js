@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
-import JobItem from './components/job_list_element';
+import List from './components/list';
+import Jobıtem from './components/job_list_element'
 import jobs from './data/jobs';
 
 const items = ['banana', 'apple', 'orange'];
@@ -13,12 +14,7 @@ function App() {
           Creating a Reusable List Component
         </h1>
       </header>
-      {jobs.map(job =>
-        <JobItem 
-          {...job}
-          key={job.id}
-        />
-      )}
+      <List items={jobs} itemElement={Jobıtem} />
     </div>
   );
 }
