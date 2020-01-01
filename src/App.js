@@ -3,6 +3,8 @@ import logo from './logo.svg';
 import './App.css';
 import Counter from "./components/counter";
 
+const items = ['banana', 'apple', 'orange'];
+
 function App() {
   return (
     <div className="App">
@@ -19,7 +21,9 @@ function App() {
         >
           Learn React
         </a>
-        <Counter />
+        {items.map((item, index) =>
+          <Counter name={item} key={index} />
+        )}
       </header>
     </div>
   );
