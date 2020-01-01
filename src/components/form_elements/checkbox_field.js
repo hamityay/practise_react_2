@@ -3,7 +3,7 @@ import './input_field.css';
 
 export default class CheckboxField extends React.Component {
   render() {
-    const { label, name, onChange } = this.props;
+    const { label, name, value, onChange } = this.props;
     
     return(
       <div className="checkbox-field">
@@ -11,6 +11,7 @@ export default class CheckboxField extends React.Component {
           type="checkbox"
           name={name}
           id={name}
+          value={value}
           onChange={onChange}
         />
         <label htmlFor={name}>{label}</label>

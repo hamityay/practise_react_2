@@ -3,7 +3,7 @@ import './input_field.css';
 
 export default class TextInputField extends React.Component {
   render() {
-    const { label, name, onChange } = this.props;
+    const { label, name, value, onChange } = this.props;
 
     return(
       <div className="input-field">
@@ -16,6 +16,7 @@ export default class TextInputField extends React.Component {
         <input
           id={name}
           name={name}
+          value={value}
           type="text"
           className="input-field__text-input"
           onChange={onChange}
